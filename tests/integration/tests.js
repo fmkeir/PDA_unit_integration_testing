@@ -10,9 +10,16 @@ describe('calculator functionality', function() {
   });
 
   it('should have working number buttons', function(){
-    running_total = element(by.css('#running_total'))
+    running_total = element(by.css('#running_total'));
     element(by.css('#number2')).click();
-    expect(running_total.getAttribute('value')).to.eventually.equal('2')
+    expect(running_total.getAttribute('value')).to.eventually.equal('2');
+  });
+
+  it('should update the display of the running total when numbers are clicked', function(){
+    running_total = element(by.css('#running_total'));
+    element(by.css('#number3')).click();
+    element(by.css('#number4')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('34');
   });
 
 });
