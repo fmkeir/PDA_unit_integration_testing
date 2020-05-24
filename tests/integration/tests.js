@@ -22,4 +22,13 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('34');
   });
 
+  it('should update the display to show result of calculation', function(){
+    running_total = element(by.css('#running_total'));
+    element(by.css('#number1')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('10');
+  });
+
 });
